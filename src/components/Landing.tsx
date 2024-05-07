@@ -1,7 +1,7 @@
 "use client"
 
 import Lottie from "react-lottie-player"
-import netflixLanding from "../../../public/json/netflixLanding.json"
+import netflixLanding from "../../public/json/netflixLanding.json"
 import { useRouter } from "next/navigation";
 
 export const Landing = () => {

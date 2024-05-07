@@ -1,5 +1,4 @@
-import Image from "next/image";
-import { Landing } from "./_components/Landing";
+import { Landing } from "@components/Landing";
 
 export default function LandingPage() {
   return (
