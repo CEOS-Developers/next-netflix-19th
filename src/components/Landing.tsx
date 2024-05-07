@@ -13,7 +13,7 @@ export const Landing = () => {
       play
       style={{ width: 375 }}
       loop={false}
-      onComplete={() => router.push("/home")}
+      onComplete={() => router.push("/main")}
     />
   );
 };
