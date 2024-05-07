@@ -1,4 +1,4 @@
-import NetlifxSVG from '../../public/svg/netflix.svg'
+import NetlifxSVG from '../../../public/svg/netflix.svg'
 
 export default function MainHeader() {
   return (
