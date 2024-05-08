@@ -30,7 +30,7 @@ export default function RootLayout({
     <html lang="ko" className={`${pretendard.variable}`}>
       <body className={pretendard.className}>
         <div className="w-full h-screen flex justify-center items-start overflow-hidden g-gradient-to-r from-gray-300 via-gray-400 to-gray-600">
-          <div className="md:w-[375px] w-full h-screen-30 bg-black overflow-y-scroll relative md:rounded-xl">
+          <div className="md:w-[375px] w-full h-full  bg-black overflow-hidden relative md:rounded-xl">
             <Header />
             {children}
             <Footer />
