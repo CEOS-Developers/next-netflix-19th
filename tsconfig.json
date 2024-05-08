@@ -26,9 +26,16 @@
       "@hooks/*": ["./hooks/*"],
       "@utils/*": ["./utils/*"],
       "@pages/*": ["./pages/*"],
-      "@_type/*": ["./type/*"]
-    },
+      "@_type/*": ["./type/*"],
+      "@public/*": ["../public/*"]
+    }
   },
-  "include": ["global.d.ts","next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
+  "include": [
+    "global.d.ts",
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    ".next/types/**/*.ts"
+  ],
   "exclude": ["node_modules"]
 }
