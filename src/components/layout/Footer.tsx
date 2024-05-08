@@ -40,17 +40,17 @@ export default function Footer(): JSX.Element {
         </div>
         
         <div className="flex flex-col items-center justify-between h-[35px]">
-        <Image src='/comingsoon.svg' alt="Coming Soon" width={20} height={20} onClick={() => handleImageClick('comingsoon')} />
+        <Image src='/comingsoon.svg' alt="Coming Soon" width={20} height={20}  />
           <span className="text-white" style={{ fontSize: '8.2px' }}>Coming Soon</span>
         </div>
         
         <div className="flex flex-col items-center justify-between h-[35px]">
-        <Image src='/download.svg' alt="Download" width={16} height={19} onClick={() => handleImageClick('download')} />
+        <Image src='/download.svg' alt="Download" width={16} height={19}/>
           <span className="text-white" style={{ fontSize: '8.2px' }}>Download</span>
         </div>
         
         <div className="flex flex-col items-center justify-between h-[35px]">
-        <Image src='/more.svg' alt="More" width={21} height={17} onClick={() => handleImageClick('more')} />
+        <Image src='/more.svg' alt="More" width={21} height={17}/>
           <span className="text-white" style={{ fontSize: '8.2px' }}>More</span>
         </div>
       </div>
