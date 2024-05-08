@@ -2,15 +2,15 @@ import Previewr from '@/components/Previewr';
 import { fetchDiscoverMovie } from '@/lib/actions';
 
 const apiEndpoints = {
-  discoverMovies: '/discover/movie?page=1&sort_by=popularity.desc',
+  popularmovies: '/movie/popular',
 };
 
 export default async function Home() {
-  const DiscoverRes = await fetchDiscoverMovie(apiEndpoints.discoverMovies);
-  console.log(DiscoverRes);
+  const fetchData = await fetchDiscoverMovie(apiEndpoints.popularmovies);
+
   return (
     <>
-      <Previewr DiscoverRes={DiscoverRes} />
+      <Previewr fetchData={fetchData} />
     </>
   );
 }
