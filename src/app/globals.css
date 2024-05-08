@@ -8,11 +8,16 @@
   margin: 0;
 }
 
+html {
+  background-color: #f3f6f8;
+}
+
 body {
-  width: 100%;
+  width: 375px;
   height: 100dvh;
   background: black;
   color: white;
+  margin: 0px auto;
 }
 
 .scroll-box {
