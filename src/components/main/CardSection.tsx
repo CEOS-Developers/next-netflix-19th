@@ -11,8 +11,8 @@ export default function CardSection({ title, movieList }: CardSectionProps) {
       <p
         className={
           title === 'Previews'
-            ? 'text-[26px] leading-[20px] p-4 font-[700]'
-            : 'text-[20px] leading-[15px] p-4 font-[700]'
+            ? 'text-[26px] leading-[20px] px-4 font-[700]'
+            : 'text-[20px] leading-[15px] px-4 font-[700]'
         }
       >
         {title}
