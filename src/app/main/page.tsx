@@ -16,6 +16,7 @@ export default async function HomePage() {
           <PreviewImage
             imageUrl={`https://image.tmdb.org/t/p/w1280${movieData.poster_path}`}
             square={false}
+            key={movieData.id}
           />
         );
       })}
