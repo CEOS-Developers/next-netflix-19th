@@ -1,3 +1,4 @@
+import Poster from '@/components/Poster';
 import Previewr from '@/components/Previewr';
 import { fetchDiscoverMovie } from '@/lib/actions';
 
@@ -10,7 +11,13 @@ export default async function Home() {
 
   return (
     <>
-      <Previewr fetchData={fetchData} />
+      <div className="pb-3">
+        <Previewr fetchData={fetchData} />
+        <Poster title="Popular on Netflix" fetchData={fetchData} />
+        <Poster title="Trending Now" fetchData={fetchData} />
+        <Poster title="Top 10 in Nigeria Today" fetchData={fetchData} />
+        <Poster title="My List" fetchData={fetchData} />
+      </div>
     </>
   );
 }
