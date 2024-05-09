@@ -13,8 +13,8 @@ export default function PreviewImage({
     <article
       className={
         square
-          ? 'w-[103px] h-[161px] overflow-hidden relative'
-          : 'w-[100px] h-[100px] rounded-full overflow-hidden relative'
+          ? 'w-[103px] h-[161px] overflow-hidden relative shrink-0'
+          : 'w-[100px] h-[100px] rounded-full overflow-hidden relative shrink-0'
       }
     >
       <Image

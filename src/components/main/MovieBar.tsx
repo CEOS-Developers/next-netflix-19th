@@ -5,7 +5,7 @@ import SvgCard from './SvgCard';
 
 export default function MovieBar() {
   return (
-    <section className="w-full mt-[12px] mb-[22px] flex justify-evenly">
+    <section className="w-full mt-[12px] mb-[22px] flex justify-evenly shrink-0">
       <div className="flex flex-col items-center basis-12">
         <Plus />
         <p className="text-[14px] leading-[20px]">My List</p>

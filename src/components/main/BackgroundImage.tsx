@@ -10,7 +10,7 @@ export default function BackgroundImage({
   number,
 }: PreviewImageProps) {
   return (
-    <section className="w-full flex flex-col items-center">
+    <section className="w-full flex flex-col items-center shrink-0">
       <article className="w-[375px] h-[415px] overflow-hidden relative">
         <Image
           alt="background_image"
