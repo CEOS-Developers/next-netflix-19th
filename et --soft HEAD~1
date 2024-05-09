@@ -1,0 +1,53 @@
+[33mcommit 6a66bbf8a2d52fab07eac20e4c2be4df43813c05[m[33m ([m[1;36mHEAD -> [m[1;32mShunamo[m[33m, [m[1;31morigin/Shunamo[m[33m)[m
+Author: dreamforxou <shsh9600@naver.com>
+Date:   Thu May 9 04:15:56 2024 +0900
+
+    feat : TopRated 포스터 불러오기..
+
+[33mcommit 2c10717e8c7180ba68256210978227a93147426b[m
+Author: dreamforxou <shsh9600@naver.com>
+Date:   Thu May 9 01:53:04 2024 +0900
+
+    feat : header
+
+[33mcommit 0cad19812e54453ee64d9abee34552c3e92b4cda[m
+Author: dreamforxou <shsh9600@naver.com>
+Date:   Thu May 9 01:07:36 2024 +0900
+
+    feat : footer
+
+[33mcommit f8f9e84f369ec99457d1843e74f09a1a124c89b2[m
+Author: 김동혁 <132553964+ddhelop@users.noreply.github.com>
+Date:   Wed May 8 23:00:33 2024 +0900
+
+    fix: fixBug
+
+[33mcommit e3fcc9da8deedc008a44862d5ef17240813ba80a[m
+Author: 김동혁 <132553964+ddhelop@users.noreply.github.com>
+Date:   Wed May 8 22:34:44 2024 +0900
+
+    feat: :zap: ImproveDataStructure
+
+[33mcommit f38e8733533fbba48acb9d4076606786222b7c81[m[33m ([m[1;32mmaster[m[33m)[m
+Author: 김동혁 <132553964+ddhelop@users.noreply.github.com>
+Date:   Tue May 7 16:23:48 2024 +0900
+
+    feat: :lipstick: mobile 환경 설정
+
+[33mcommit 604d8964bae2dc54c89bbc1ca34fa2330ba843d4[m
+Author: 김동혁 <132553964+ddhelop@users.noreply.github.com>
+Date:   Tue May 7 16:05:16 2024 +0900
+
+    feat: :tada: next 14 project 초기세팅
+
+[33mcommit 01a1a9f6acd8ab1fc1213f04950e07d4f34ddadc[m
+Author: leejin_rho <52371699+leejin-rho@users.noreply.github.com>
+Date:   Sun May 5 16:03:36 2024 +0900
+
+    Update README.md
+
+[33mcommit 3a442de4fece9df343484e841d4f32ef4021f663[m
+Author: leejin_rho <52371699+leejin-rho@users.noreply.github.com>
+Date:   Sun May 5 15:34:57 2024 +0900
+
+    Initial commit
