@@ -6,7 +6,7 @@ import More from '@public/svg/tabMoreIcon.svg';
 
 export default function TabBar() {
   return (
-    <div className="w-full h-[79.7px] flex flex-col">
+    <div className="w-full h-[79.7px] flex flex-col absolute bottom-[0] bg-black">
       <div className="w-full h-[53px] flex justify-around items-center">
         <Home className="hover:cursor-pointer" />
         <Search className="hover:cursor-pointer" />
