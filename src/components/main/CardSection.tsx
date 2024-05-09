@@ -7,7 +7,7 @@ interface CardSectionProps {
 
 export default function CardSection({ title, movieList }: CardSectionProps) {
   return (
-    <section className="w-full flex flex-col gap-[14px] m-[11px]">
+    <section className="w-full flex flex-col gap-[14px] my-[11px]">
       <p
         className={
           title === 'Previews'

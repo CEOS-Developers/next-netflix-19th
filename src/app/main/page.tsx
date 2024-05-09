@@ -29,12 +29,12 @@ export default async function HomePage() {
   ];
 
   console.log(nowPlayingMovies);
-  const random = Math.floor(Math.random() * 10) + 1;
+  const random = Math.floor(Math.random() * 10);
   return (
-    <section className="max-w-sm flex flex-col items-center h-full overflow-scroll shrink-0">
+    <section className="w-full flex flex-col items-center h-full overflow-scroll shrink-0">
       <BackgroundImage
         imageUrl={`https://image.tmdb.org/t/p/w1280${nowPlayingMovies[random]}`}
-        number={random}
+        number={random + 1}
       />
       <MovieBar />
       {MoviesList.map((movielist, idx) => {
