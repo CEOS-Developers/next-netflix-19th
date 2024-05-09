@@ -1,4 +1,5 @@
 import type { Config } from 'tailwindcss';
+const plugin = require('tailwindcss/plugin');
 
 const config: Config = {
   content: [
@@ -14,11 +15,26 @@ const config: Config = {
         'gradient-to-b': 'linear-gradient(to bottom, rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0) , rgba(0, 0, 0, 1))'
 
       },
+
       height: {
         'screen-30': 'calc(100vh - 30px)',
+        'screen-80': 'calc(100vh - 79.7px)',
       },
     },
   },
-  plugins: [],
+  plugins: [
+    plugin(function ({ addUtilities }: any) {
+      const newUtilities = {
+        '.scrollbar-hide': {
+          '-ms-overflow-style': 'none', // IE and Edge
+          'scrollbar-width': 'none', // Firefox
+          '&::-webkit-scrollbar': {
+            display: 'none', // Chrome, Safari, Opera
+          },
+        },
+      };
+      addUtilities(newUtilities);
+    }),
+  ],
 };
 export default config;
