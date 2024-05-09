@@ -17,13 +17,13 @@ export default function CardSection({ title, movieList }: CardSectionProps) {
       >
         {title}
       </p>
-      <div className='overflow-x-scroll flex gap-[7px]'>
+      <div className="overflow-x-scroll flex gap-[7px]">
         {movieList.map((movie: any) => {
           return (
             <PreviewImage
               imageUrl={`https://image.tmdb.org/t/p/w1280${movie}`}
               square={title === 'Previews' ? false : true}
-              key={movie.id}
+              key={movie}
             />
           );
         })}

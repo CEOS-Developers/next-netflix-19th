@@ -28,7 +28,6 @@ export default async function HomePage() {
     { title: 'UpComing Movies', movieList: upComingMovies },
   ];
 
-  console.log(nowPlayingMovies);
   const random = Math.floor(Math.random() * 10);
   return (
     <section className="w-full flex flex-col items-center h-full overflow-scroll shrink-0">
