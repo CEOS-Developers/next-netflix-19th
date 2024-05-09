@@ -24,9 +24,9 @@ export default function TabBar() {
       <div className="w-full h-[53px] flex justify-around items-center pt-2">
         <div className="tabBarItem" onClick={() => router.push('/main')}>
           {pathname === '/main' ? (
-            <HomeGraySVG className="tabBarItemSVG" />
+            <HomeWhiteSVG className="tabBarItemSVG" />
           ) : (
-            <HomeWhiteSVG />
+            <HomeGraySVG className="tabBarItemSVG" />
           )}
           <span
             className={`tabBarItemSpan ${
@@ -39,9 +39,9 @@ export default function TabBar() {
 
         <div className="tabBarItem" onClick={() => router.push('/search')}>
           {pathname === '/search' ? (
-            <SearchGraySVG className="tabBarItemSVG" />
-          ) : (
             <SearchWhiteSVG className="tabBarItemSVG" />
+          ) : (
+            <SearchGraySVG className="tabBarItemSVG" />
           )}
           <span
             className={`tabBarItemSpan ${
@@ -54,9 +54,9 @@ export default function TabBar() {
 
         <div className="tabBarItem" onClick={() => router.push('/commingsoon')}>
           {pathname === '/commingsoon' ? (
-            <CommingSoonGraySVG className="tabBarItemSVG" />
-          ) : (
             <CommingSoonWhiteSVG className="tabBarItemSVG" />
+          ) : (
+            <CommingSoonGraySVG className="tabBarItemSVG" />
           )}
           <span
             className={`tabBarItemSpan ${
@@ -69,9 +69,9 @@ export default function TabBar() {
 
         <div className="tabBarItem" onClick={() => router.push('/download')}>
           {pathname === '/download' ? (
-            <DownloadsGraySVG className="tabBarItemSVG" />
-          ) : (
             <DownloadsWhiteSVG className="tabBarItemSVG" />
+          ) : (
+            <DownloadsGraySVG className="tabBarItemSVG" />
           )}
           <span
             className={`tabBarItemSpan ${
@@ -84,9 +84,9 @@ export default function TabBar() {
 
         <div className="tabBarItem" onClick={() => router.push('/more')}>
           {pathname === '/more' ? (
-            <MoreGraySVG className="tabBarItemSVG" />
-          ) : (
             <MoreWhiteSVG className="tabBarItemSVG" />
+          ) : (
+            <MoreGraySVG className="tabBarItemSVG" />
           )}
           <span
             className={`tabBarItemSpan ${
