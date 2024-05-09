@@ -25,6 +25,7 @@
       "@context/*": ["./context/*"],
       "@hooks/*": ["./hooks/*"],
       "@utils/*": ["./utils/*"],
+      "@apis/*": ["./apis/*"],
       "@pages/*": ["./pages/*"],
       "@_type/*": ["./type/*"],
       "@public/*": ["../public/*"]

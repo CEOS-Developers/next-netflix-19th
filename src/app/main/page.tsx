@@ -8,7 +8,6 @@ import {
 
 export default async function HomePage() {
   const nowPlayingMovieData = await getMovieNowPlaying();
-
   return (
     <section className="max-w-sm flex justify-center items-center h-full">
       {nowPlayingMovieData.map((movieData: any) => {
