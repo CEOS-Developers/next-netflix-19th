@@ -1,10 +1,16 @@
 'use client';
 
-import ComingSoon from '@public/svg/tabComingSoonIcon.svg';
-import DownLoads from '@public/svg/tabDownloadIcon.svg';
-import Home from '@public/svg/tabHomeIcon.svg';
-import Search from '@public/svg/tabSearchIcon.svg';
-import More from '@public/svg/tabMoreIcon.svg';
+import HomeGraySVG from '@public/svg/tabHomeGray.svg';
+import HomeWhiteSVG from '@public/svg/tabHomeWhite.svg';
+import SearchGraySVG from '@public/svg/tabSearchGray.svg';
+import SearchWhiteSVG from '@public/svg/tabSearchWhite.svg';
+import CommingSoonGraySVG from '@public/svg/tabCommingSoonGray.svg';
+import CommingSoonWhiteSVG from '@public/svg/tabCommingSoonWhite.svg';
+import DownloadsGraySVG from '@public/svg/tabDownloadsGray.svg';
+import DownloadsWhiteSVG from '@public/svg/tabDownloadsWhite.svg';
+import MoreGraySVG from '@public/svg/tabMoreGray.svg';
+import MoreWhiteSVG from '@public/svg/tabMoreWhite.svg';
+
 import { usePathname } from 'next/navigation';
 import { useRouter } from 'next/navigation';
 
@@ -13,41 +19,83 @@ export default function TabBar() {
   const pathname = usePathname();
   const router = useRouter();
 
-  const homeFillClassName = pathname === '/main' ? 'fill-white' : '';
-
-  const searchFillClassName =
-    pathname === '/search' ? 'fill-current text-white' : '';
-  const comingSoonFillClassName =
-    pathname === '/comingsoon' ? 'fill-current text-white' : '';
-  const downloadsFillClassName =
-    pathname === '/downloads' ? 'fill-current text-white' : '';
-  const moreFillClassName =
-    pathname === '/more' ? 'fill-current text-white' : '';
-
   return (
     <div className="w-full h-[79.7px] flex flex-col absolute bottom-[0] bg-black">
       <div className="w-full h-[53px] flex justify-around items-center pt-2">
-        <Home
-          className={`hover:cursor-pointer ${homeFillClassName}`}
-          onClick={() => router.push('/main')}
-        />
+        <div className="tabBarItem" onClick={() => router.push('/main')}>
+          {pathname === '/main' ? (
+            <HomeGraySVG className="tabBarItemSVG" />
+          ) : (
+            <HomeWhiteSVG />
+          )}
+          <span
+            className={`tabBarItemSpan ${
+              pathname === '/main' ? 'text-white' : 'text-tabBarGray'
+            }`}
+          >
+            Home
+          </span>
+        </div>
 
-        <Search
-          className={`hover:cursor-pointer ${searchFillClassName}`}
-          onClick={() => router.push('/search')}
-        />
-        <ComingSoon
-          className={`hover:cursor-pointer ${comingSoonFillClassName}`}
-          onClick={() => router.push('/comingsoon')}
-        />
-        <DownLoads
-          className={`hover:cursor-pointer ${downloadsFillClassName}`}
-          onClick={() => router.push('/downloads')}
-        />
-        <More
-          className={`hover:cursor-pointer ${moreFillClassName}`}
-          onClick={() => router.push('/more')}
-        />
+        <div className="tabBarItem" onClick={() => router.push('/search')}>
+          {pathname === '/search' ? (
+            <SearchGraySVG className="tabBarItemSVG" />
+          ) : (
+            <SearchWhiteSVG className="tabBarItemSVG" />
+          )}
+          <span
+            className={`tabBarItemSpan ${
+              pathname === '/search' ? 'text-white' : 'text-tabBarGray'
+            }`}
+          >
+            Search
+          </span>
+        </div>
+
+        <div className="tabBarItem" onClick={() => router.push('/commingsoon')}>
+          {pathname === '/commingsoon' ? (
+            <CommingSoonGraySVG className="tabBarItemSVG" />
+          ) : (
+            <CommingSoonWhiteSVG className="tabBarItemSVG" />
+          )}
+          <span
+            className={`tabBarItemSpan ${
+              pathname === '/commingsoon' ? 'text-white' : 'text-tabBarGray'
+            }`}
+          >
+            Comming Soon
+          </span>
+        </div>
+
+        <div className="tabBarItem" onClick={() => router.push('/download')}>
+          {pathname === '/download' ? (
+            <DownloadsGraySVG className="tabBarItemSVG" />
+          ) : (
+            <DownloadsWhiteSVG className="tabBarItemSVG" />
+          )}
+          <span
+            className={`tabBarItemSpan ${
+              pathname === '/download' ? 'text-white' : 'text-tabBarGray'
+            }`}
+          >
+            Downloads
+          </span>
+        </div>
+
+        <div className="tabBarItem" onClick={() => router.push('/more')}>
+          {pathname === '/more' ? (
+            <MoreGraySVG className="tabBarItemSVG" />
+          ) : (
+            <MoreWhiteSVG className="tabBarItemSVG" />
+          )}
+          <span
+            className={`tabBarItemSpan ${
+              pathname === '/more' ? 'text-white' : 'text-tabBarGray'
+            }`}
+          >
+            More
+          </span>
+        </div>
       </div>
       <div className="w-full h-[26.7]"></div>
     </div>

@@ -27,25 +27,39 @@ body {
 }
 
 @font-face {
-  font-family: "San Francisco";
+  font-family: 'San Francisco';
   font-weight: 400;
-  src: url("https://applesocial.s3.amazonaws.com/assets/styles/fonts/sanfrancisco/sanfranciscodisplay-regular-webfont.woff");
+  src: url('https://applesocial.s3.amazonaws.com/assets/styles/fonts/sanfrancisco/sanfranciscodisplay-regular-webfont.woff');
 }
 
 @font-face {
-  font-family: "San Francisco";
+  font-family: 'San Francisco';
   font-weight: 500;
-  src: url("https://applesocial.s3.amazonaws.com/assets/styles/fonts/sanfrancisco/sanfranciscodisplay-medium-webfont.woff");
+  src: url('https://applesocial.s3.amazonaws.com/assets/styles/fonts/sanfrancisco/sanfranciscodisplay-medium-webfont.woff');
 }
 
 @font-face {
-  font-family: "San Francisco";
+  font-family: 'San Francisco';
   font-weight: 600;
-  src: url("https://applesocial.s3.amazonaws.com/assets/styles/fonts/sanfrancisco/sanfranciscodisplay-semibold-webfont.woff");
+  src: url('https://applesocial.s3.amazonaws.com/assets/styles/fonts/sanfrancisco/sanfranciscodisplay-semibold-webfont.woff');
 }
 
 @font-face {
-  font-family: "San Francisco";
+  font-family: 'San Francisco';
   font-weight: 700;
-  src: url("https://applesocial.s3.amazonaws.com/assets/styles/fonts/sanfrancisco/sanfranciscodisplay-bold-webfont.woff");
+  src: url('https://applesocial.s3.amazonaws.com/assets/styles/fonts/sanfrancisco/sanfranciscodisplay-bold-webfont.woff');
+}
+
+@layer components {
+  .tabBarItem {
+    @apply flex flex-col justify-center items-center hover:cursor-pointer w-[55px] h-[38px];
+  }
+
+  .tabBarItemSVG {
+    @apply flex-1 flex-shrink-0;
+  }
+
+  .tabBarItemSpan {
+    @apply text-[8.2px] mt-[0.1rem];
+  }
 }

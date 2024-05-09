@@ -11,6 +11,9 @@ const config: Config = {
       spacing: {
         '375': '375px',
       },
+      colors: {
+        tabBarGray: '#8C8787',
+      },
     },
   },
   plugins: [],
