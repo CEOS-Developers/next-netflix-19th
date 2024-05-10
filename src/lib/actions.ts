@@ -1,7 +1,7 @@
 import { getErrorMessage } from './utils';
 
 export const fetchDiscoverMovie = async (endpoint: string) => {
-  const url = `https://api.themoviedb.org/3${endpoint}`;
+  const url = `${process.env.NEXT_PUBLIC_URL}${endpoint}`;
   console.log("Requesting URL:", url); // URL 로깅
   const res = await fetch(url, {
     method: 'GET',
