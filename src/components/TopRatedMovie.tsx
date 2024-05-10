@@ -9,8 +9,8 @@ export default function TopRatedMovies({ fetchData }: TopRatedProps) {
     <div className="w-full ">
       <div className="flex overflow-x-auto snap-x snap-mandatory scrollbar-hide" style={{ scrollSnapType: "x mandatory" }}>
         {fetchData.results.slice(0, 10).map((movie, index) => (
-          <div key={index} className="snap-center inline-block">
-            <div className="text-center relative w-[375px] h-[415px] overflow-hidden">
+          <div key={index} className="snap-center inline-block md:max-w-[375px]">
+            <div className="text-center relative w-[100vw] h-[415px] overflow-hidden">
             <Image
                 src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
                 fill
