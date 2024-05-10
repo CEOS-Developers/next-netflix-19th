@@ -1,44 +1,32 @@
-import BigPoster from '@/components/BigPoster';
-import Poster from '@/components/Poster';
-import Previewr from '@/components/Previewr';
-import TopRatedMovies from '@/components/TopRatedMovie';
-import { fetchDiscoverMovie } from '@/lib/actions';
+// components/LandingPage.tsx
+'use client';
 
-const apiEndpoints = {
-  popularmovies: '/movie/popular',
-  trendingmovies: '/trending/movie/day?language=en-US',
-  topratedmovies: '/tv/top_rated',
-  ontheairmovies: '/tv/on_the_air',
-  nowplayingmovies: '/movie/now_playing',
-  upcomingmovies: '/movie/upcoming',
-  topRatedMovies: '/movie/top_rated',
+import { useEffect } from 'react';
+import { useRouter } from 'next/navigation';
+import '@dotlottie/player-component';
+
+const LandingPage = () => {
+  const router = useRouter();
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      router.push('/main');  // 메인 페이지로 리디렉션!
+    }, 5000);
+
+    return () => clearTimeout(timer);
+  }, [router]);
+
+  return (
+    <div className="flex justify-center items-center h-screen">
+      <dotlottie-player
+        src="https://lottie.host/9ff03e8b-41e2-44e6-889f-38028549e162/0iEaJMZOVi.json"
+        background="transparent"
+        speed="1"
+        style={{ width: '300px', height: '300px' }}
+        autoplay
+      ></dotlottie-player>
+    </div>
+  );
 };
 
-export default async function Home() {
-  const fetchPopular = await fetchDiscoverMovie(apiEndpoints.popularmovies);
-  const fetchTrend = await fetchDiscoverMovie(apiEndpoints.trendingmovies);
-  const fetchTopRated = await fetchDiscoverMovie(apiEndpoints.topratedmovies);
-  const fetchOnAir = await fetchDiscoverMovie(apiEndpoints.ontheairmovies);
-  const fetchNowPlaying = await fetchDiscoverMovie(apiEndpoints.nowplayingmovies);
-  const fetchUpComing = await fetchDiscoverMovie(apiEndpoints.upcomingmovies);
-  const fetchTopRated1 = await fetchDiscoverMovie(apiEndpoints.topRatedMovies)
-  return (
-    <>
-      <div className="pb-3">
-        <TopRatedMovies fetchData={fetchTopRated1} />
-        <Previewr fetchData={fetchNowPlaying} />
-        <Poster title="Popular on Netflix" fetchData={fetchPopular} />
-        <Poster title="Trending Now" fetchData={fetchTrend} />
-        <Poster title="Top 10 in Nigeria Today" fetchData={fetchTopRated} />
-        <Poster title="Airing Today" fetchData={fetchOnAir} />
-        <Poster title="Now Playing" fetchData={fetchNowPlaying} />
-        <Poster title="Upcoming" fetchData={fetchUpComing} />
-        <BigPoster title="Netflix Originals" fetchData={fetchPopular} />
-        <Poster title="Popular on Netflix" fetchData={fetchPopular} />
-        <Poster title="Trending Now" fetchData={fetchTrend} />
-        <Poster title="Top 10 in Nigeria Today" fetchData={fetchTopRated} />
-        <Poster title="Airing Today" fetchData={fetchOnAir} />
-      </div>
-    </>
-  );
-}
+export default LandingPage;

@@ -1,8 +1,6 @@
 import { PreviewrProps } from '@/lib/types';
 import Image from 'next/image';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import 'swiper/css';
-import 'swiper/css/pagination';
+
 
 export default function Previewr({ fetchData }: PreviewrProps) {
   return (

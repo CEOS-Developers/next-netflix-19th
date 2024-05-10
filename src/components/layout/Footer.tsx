@@ -85,7 +85,7 @@ export default function Footer(): JSX.Element {
             </span>
           </div>
         </div>
-        <div className="flex items-center justify-center h-[31.7px] w-full bg-[#000000]">
+        <div className="hidden md:flex items-center justify-center h-[31.7px] w-full bg-[#000000]"> {/*모바일에서는숨기기*/}
           <div className="w-[121px] h-[4.5px] bg-white mt-[13.12px]"></div>
         </div>
       </div>
