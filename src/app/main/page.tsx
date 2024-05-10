@@ -25,7 +25,7 @@ export default async function Home() {
   const fetchUpComing = await fetchDiscoverMovie(apiEndpoints.upcomingmovies);
   const fetchTopRated1 = await fetchDiscoverMovie(apiEndpoints.topRatedMovies)
   return (
-    <div className="flex flex-col h-screen">
+    <div className="flex flex-col h-screen" >
       <Header />
       <div className="flex-1 overflow-auto scrollbar-hide">
         <div className="pb-3">
