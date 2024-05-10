@@ -17,12 +17,7 @@ export default function PreviewImage({
           : 'w-[100px] h-[100px] rounded-full overflow-hidden relative shrink-0'
       }
     >
-      <Image
-        alt="preview_image"
-        src={imageUrl}
-        objectFit="cover"
-        layout="fill"
-      />
+      <Image alt="preview_image" src={imageUrl} fill className="object-cover" />
     </article>
   );
 }

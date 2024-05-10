@@ -15,8 +15,8 @@ export default function BackgroundImage({
         <Image
           alt="background_image"
           src={imageUrl}
-          objectFit="cover"
-          layout="fill"
+          fill
+          className="object-cover"
         />
       </article>
       <div className="flex gap-1 items-center mt-2">
