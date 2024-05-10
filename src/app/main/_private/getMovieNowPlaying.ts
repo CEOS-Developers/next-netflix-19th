@@ -2,7 +2,7 @@
 export async function getMovieNowPlaying() {
   const previewMovieResponse = await fetch(
     `https://api.themoviedb.org/3/movie/now_playing?api_key=${process.env.THEMOVIE_API_KEY}`,
-    { cache: 'force-cache' }
+    { cache: 'no-store' }
   );
 
   const previewMovieData = await previewMovieResponse.json();
@@ -14,7 +14,7 @@ export async function getMovieNowPlaying() {
 export async function getMoviePopular() {
   const popularMovieResponse = await fetch(
     `https://api.themoviedb.org/3/movie/popular?api_key=${process.env.THEMOVIE_API_KEY}`,
-    { cache: 'force-cache' }
+    { cache: 'no-store' }
   );
 
   const popularMovieData = await popularMovieResponse.json();
@@ -26,7 +26,7 @@ export async function getMoviePopular() {
 export async function getMovieTopRated() {
   const topRatedMovieResponse = await fetch(
     `https://api.themoviedb.org/3/movie/top_rated?api_key=${process.env.THEMOVIE_API_KEY}`,
-    { cache: 'force-cache' }
+    { cache: 'no-store' }
   );
 
   const topRatedMovieData = await topRatedMovieResponse.json();
@@ -37,7 +37,7 @@ export async function getMovieTopRated() {
 export async function getMovieUpComing() {
   const upComingMovieResponse = await fetch(
     `https://api.themoviedb.org/3/movie/upcoming?api_key=${process.env.THEMOVIE_API_KEY}`,
-    { cache: 'force-cache' }
+    { cache: 'no-store' }
   );
 
   const upComingMovieData = await upComingMovieResponse.json();
