@@ -7,15 +7,16 @@ export default function TopRatedMovies({ fetchData }: TopRatedProps) {
   return (
     
     <div className="w-full ">
-      <div className="flex overflow-x-auto snap-x snap-mandatory scrollbar-hide" style={{ scrollSnapType: "x mandatory" }}>
+  <div className="flex overflow-x-auto snap-x snap-mandatory scrollbar-hide">
         {fetchData.results.slice(0, 10).map((movie, index) => (
-          <div key={index} className="snap-center inline-block md:max-w-[375px]">
-            <div className="text-center relative w-[100vw] h-[415px] overflow-hidden">
-            <Image
-                src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
-                fill
-                alt={movie.title}
-              />
+          <div key={index} className="snap-center inline-block w-full min-w-full">
+            <div className="text-center relative w-full h-[415px] overflow-hidden">
+              <Image
+                  src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
+                  layout="fill"
+                  objectFit="cover"
+                  alt={movie.title}
+                />
               <div className="absolute inset-0 bg-gradient-to-b from-black via-transparent to-black"></div>
               <div className="absolute bottom-0 left-0 right-0">
                 <div className="flex items-center justify-center space-x-2">
