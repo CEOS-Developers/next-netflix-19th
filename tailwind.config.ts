@@ -20,6 +20,10 @@ const config: Config = {
         'screen-30': 'calc(100vh - 30px)',
         'screen-80': 'calc(100vh - 79.7px)',
       },
+
+      colors: {
+        customGray: '#C4C4C4'
+     },
     },
   },
   plugins: [

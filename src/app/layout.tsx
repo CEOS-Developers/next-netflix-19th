@@ -4,8 +4,8 @@ import localFont from 'next/font/local';
 import './globals.css';
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
-import TopRated from '@/components/layout/TopRated';
-
+import TopRated from '@/components/layout/TopRated'
+import Play from '@/components/layout/Play';
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
@@ -35,7 +35,8 @@ export default function RootLayout({
           {/* Mobile */}
           <div className="md:w-[375px] w-full h-screen  bg-black overflow-hidden relative md:rounded-xl overflow-y-visible scrollbar-hide">
             <Header />
-            <TopRated />
+            <TopRated/>
+            <Play />
             {children}
             <Footer />
           </div>
