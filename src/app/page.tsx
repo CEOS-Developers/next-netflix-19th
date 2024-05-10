@@ -1,6 +1,7 @@
 import BigPoster from '@/components/BigPoster';
 import Poster from '@/components/Poster';
 import Previewr from '@/components/Previewr';
+import TopRatedMovies from '@/components/TopRatedMovie';
 import { fetchDiscoverMovie } from '@/lib/actions';
 
 const apiEndpoints = {
@@ -20,10 +21,11 @@ export default async function Home() {
   const fetchOnAir = await fetchDiscoverMovie(apiEndpoints.ontheairmovies);
   const fetchNowPlaying = await fetchDiscoverMovie(apiEndpoints.nowplayingmovies);
   const fetchUpComing = await fetchDiscoverMovie(apiEndpoints.upcomingmovies);
-
+  const fetchTopRated1 = await fetchDiscoverMovie(apiEndpoints.topRatedMovies)
   return (
     <>
       <div className="pb-3">
+        <TopRatedMovies fetchData={fetchTopRated1} />
         <Previewr fetchData={fetchNowPlaying} />
         <Poster title="Popular on Netflix" fetchData={fetchPopular} />
         <Poster title="Trending Now" fetchData={fetchTrend} />

@@ -7,7 +7,7 @@ const Play = () => {
 
     return (
     <div className='flex justify-center'>
-      <div className="flex items-center justify-between mt-2.5" style={{ width: '259px', height: '45px' }}>
+      <div className="flex items-center justify-between mt-2.5 mb-10" style={{ width: '259px', height: '45px' }}>
         <button className="flex flex-col items-center justify-center">
           <Image src="/plus-icon.svg" alt="Add to My List" width={24} height={24} />
           <span className="text-white text-sm font-normal leading-5 tracking-tighter text-center">My List</span>

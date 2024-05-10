@@ -1,42 +1,35 @@
-import { PreviewrProps } from '@/lib/types';
+import { TopRatedProps } from '@/lib/types';
 import Image from 'next/image';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import 'swiper/css';
-import 'swiper/css/pagination';
+import Play from './layout/Play';
 
-export default function Previewr({ fetchData }: PreviewrProps) {
-  console.log('Previewer 컴포넌트');
 
+export default function TopRatedMovies({ fetchData }: TopRatedProps) {
   return (
-    <Swiper
-      spaceBetween={50}
-      slidesPerView={1}
-      pagination={{ clickable: true }}
-      onSlideChange={() => console.log('slide change')}
-      onSwiper={(swiper) => console.log(swiper)}
-    >
-      {fetchData.results.slice(0, 10).map((movie, index) => ( //딱 10개만 출력
-        <SwiperSlide key={movie.id}>
-          <div className="text-center relative">
-            <div className="absolute inset-0 bg-gradient-to-b from-black via-transparent to-black"></div>
+    <div className="w-full ">
+      <div className="flex overflow-x-auto snap-x snap-mandatory scrollbar-hide" style={{ scrollSnapType: "x mandatory" }}>
+        {fetchData.results.slice(0, 10).map((movie, index) => (
+          <div key={index} className="snap-center inline-block">
+            <div className="text-center relative w-[375px] h-[415px] overflow-hidden">
             <Image
-              src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
-              alt={movie.title}
-              width={375}
-              height={415}
-              layout="responsive"
-            />
-            <div className="absolute bottom-0 left-0 right-0">
-              <div className="flex items-center justify-center space-x-2">
-                <Image src="/Top10Icon.svg" alt="Top 10 Icon" width={15} height={15} />
-                <span className="font-sfpro display text-[13.72px] font-bold leading-[20px] tracking-[-0.041em] text-center text-white">
-                  #{index + 1} {movie.title}
-                </span>
+                src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
+                fill
+                alt={movie.title}
+                objectFit="cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-b from-black via-transparent to-black"></div>
+              <div className="absolute bottom-0 left-0 right-0">
+                <div className="flex items-center justify-center space-x-2">
+                  <Image src="/Top10Icon.svg" alt="Top 10 Icon" width={15} height={15} />
+                  <span className="text-white font-bold text-[13.72px] leading-[20px] tracking-[-0.041em]">
+                    #{index + 1} {movie.title}
+                  </span>
+                </div>
               </div>
             </div>
           </div>
-        </SwiperSlide>
-      ))}
-    </Swiper>
+        ))}
+      </div>
+      <Play />
+    </div>
   );
 }
