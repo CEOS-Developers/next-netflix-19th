@@ -14,7 +14,6 @@ export default function TopRatedMovies({ fetchData }: TopRatedProps) {
                 src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
                 fill
                 alt={movie.title}
-                objectFit="cover"
               />
               <div className="absolute inset-0 bg-gradient-to-b from-black via-transparent to-black"></div>
               <div className="absolute bottom-0 left-0 right-0">

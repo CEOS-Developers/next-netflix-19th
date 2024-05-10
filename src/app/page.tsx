@@ -9,12 +9,15 @@ const LandingPage = () => {
   const [fadeEffect, setFadeEffect] = useState('');
 
   useEffect(() => {
-    const timer = setTimeout(() => {
-      router.push('/main');  // 메인 페이지로 리디렉션!
-    }, 5000);
+    if (typeof window !== 'undefined') {
+      const timer = setTimeout(() => {
+        router.push('/main');  // 메인 페이지로 리디렉션!
+      }, 5000);
 
-    return () => clearTimeout(timer);
+      return () => clearTimeout(timer);
+    }
   }, [router]);
+
 
   return (
     <div className="flex justify-center items-center h-screen">
