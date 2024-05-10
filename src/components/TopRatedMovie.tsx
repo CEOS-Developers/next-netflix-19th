@@ -5,6 +5,7 @@ import Play from './layout/Play';
 
 export default function TopRatedMovies({ fetchData }: TopRatedProps) {
   return (
+    
     <div className="w-full ">
       <div className="flex overflow-x-auto snap-x snap-mandatory scrollbar-hide" style={{ scrollSnapType: "x mandatory" }}>
         {fetchData.results.slice(0, 10).map((movie, index) => (

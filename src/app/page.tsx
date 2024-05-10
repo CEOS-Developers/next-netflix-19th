@@ -6,7 +6,7 @@ import netflixLanding from './netflixLanding.json'
 
 const LandingPage = () => {
   const router = useRouter();
-
+    
   return (
     <div className="flex justify-center items-center h-screen">
     <Lottie
@@ -16,6 +16,7 @@ const LandingPage = () => {
       play
       onComplete={() => router.push('/main')}
     />
+    
   </div>
   );
 };
