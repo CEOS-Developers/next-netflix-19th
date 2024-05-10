@@ -1,8 +1,11 @@
 'use client';
 import React from 'react';
 import { useRouter } from 'next/navigation';
-import NetflixButton from '../components/NetflixButton';
+import dynamic from 'next/dynamic';
 
+const NetflixButton = dynamic(() => import('../components/NetflixButton'), {
+  ssr: false
+});
 
 const LandingPage = () => {
   const router = useRouter();
