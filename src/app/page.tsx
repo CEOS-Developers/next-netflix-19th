@@ -10,15 +10,14 @@ const LandingPage = () => {
 
   useEffect(() => {
     const timer = setTimeout(() => {
-      setFadeEffect('opacity-0');
-      setTimeout(() => router.push('/main'), 1000);  // 1초 후에 메인 페이지로 리디렉션!
+      router.push('/main');  // 메인 페이지로 리디렉션!
     }, 5000);
 
     return () => clearTimeout(timer);
   }, [router]);
 
   return (
-    <div className={`flex justify-center items-center h-screen transition-opacity duration-1000 ${fadeEffect}`}>
+    <div className="flex justify-center items-center h-screen">
       <dotlottie-player
         src="https://lottie.host/9ff03e8b-41e2-44e6-889f-38028549e162/0iEaJMZOVi.json"
         background="transparent"

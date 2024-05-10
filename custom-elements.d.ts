@@ -6,6 +6,7 @@ declare namespace JSX {
       speed?: string;
       autoplay?: boolean;
       style?: React.CSSProperties;
-    };
+      onEvent?: (event: string) => void;
+        };
   }
 }
