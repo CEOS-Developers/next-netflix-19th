@@ -17,6 +17,8 @@ export default function BackgroundImage({
           src={imageUrl}
           fill
           className="object-cover"
+          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+          priority
         />
       </article>
       <div className="flex gap-1 items-center mt-2">
