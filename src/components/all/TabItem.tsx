@@ -5,7 +5,7 @@ import { useRouter } from 'next/navigation';
 interface TabItemProps {
   name: string;
   pathName: string;
-  currentPath: string;
+  currentPath: string | null;
   ActiveIcon: any;
   InactiveIcon: any;
 }
