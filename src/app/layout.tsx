@@ -1,4 +1,3 @@
-
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import localFont from 'next/font/local';
@@ -31,7 +30,7 @@ export default function RootLayout({
     <html lang="ko" className={`${pretendard.variable}`}>
       <body className={pretendard.className}>
         {/* Full */}
-        <div className="w-full min-h-screen flex justify-center items-start overflow-hidden gradient-bg">
+        <div className="w-full min-h-screen flex justify-center items-start overflow-hidden">
           {/* Mobile */}
           <div className="w-full md:max-w-[375px] h-screen bg-black overflow-hidden relative md:rounded-xl overflow-y-visible scrollbar-hide">
             {children}
