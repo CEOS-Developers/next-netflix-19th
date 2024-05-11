@@ -59,8 +59,8 @@ export default function TabBar() {
   return (
     <div className="w-full h-[79.7px] flex flex-col absolute bottom-[0] bg-black">
       <div className="w-full h-[53px] flex justify-around items-center pt-2">
-        {tabBarsArray.map((tabBar, idx) => (
-          <TabItem key={idx} {...tabBar} />
+        {tabBarsArray.map((tabBar) => (
+          <TabItem key={tabBar.name} {...tabBar} />
         ))}
       </div>
       <div className="w-full h-[26.7]"></div>
