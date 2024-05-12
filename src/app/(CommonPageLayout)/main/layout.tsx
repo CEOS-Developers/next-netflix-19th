@@ -1,6 +1,4 @@
 import MainHeader from '@components/main/MainHeader';
-import HomeIndicatorBar from '@components/all/HomeIndicatorBar';
-import TabBar from '@components/all/TabBar';
 
 export default function MainLayout({
   children,
