@@ -6,11 +6,5 @@ export default function SearchLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  return (
-    <div className="flex flex-col h-screen w-full relative">
-      <main className="flex-1 w-full overflow-y-scroll">{children}</main>
-      <TabBar />
-      <HomeIndicatorBar />
-    </div>
-  );
+  return <main className="flex-1 w-full overflow-y-scroll">{children}</main>;
 }
