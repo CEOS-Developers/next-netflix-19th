@@ -1,8 +1,8 @@
-"use client"
+'use client';
 
-import Lottie from "react-lottie-player"
-import netflixLanding from "../../public/json/netflixLanding.json"
-import { useRouter } from "next/navigation";
+import Lottie from 'react-lottie-player';
+import netflixLanding from '@public/json/netflixLanding.json';
+import { useRouter } from 'next/navigation';
 
 export const Landing = () => {
   const router = useRouter();
@@ -13,7 +13,7 @@ export const Landing = () => {
       play
       style={{ width: 375 }}
       loop={false}
-      onComplete={() => router.push("/main")}
+      onComplete={() => router.push('/main')}
     />
   );
 };
