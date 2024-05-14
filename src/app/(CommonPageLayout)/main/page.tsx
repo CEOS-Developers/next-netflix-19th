@@ -3,7 +3,7 @@ import {
   getMoviePopular,
   getMovieTopRated,
   getMovieUpComing,
-} from './_private/getMovieNowPlaying';
+} from '@apis/getMovieNowPlaying';
 import BackgroundImage from '@components/main/BackgroundImage';
 import MovieBar from '@components/main/MovieBar';
 import CardSection from '@components/main/CardSection';
