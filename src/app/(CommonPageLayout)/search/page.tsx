@@ -17,6 +17,7 @@ export default async function SearchPage() {
               key={idx}
               poster_path={movie.poster_path}
               title={movie.title}
+              id={movie.id}
             />
           );
         })}
