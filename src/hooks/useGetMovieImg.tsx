@@ -5,23 +5,32 @@ import {
   getMovieUpComing,
 } from '@apis/getMovieNowPlaying';
 
-export default async function useGetMovieImg() {
-  const getMovieNowPlayingImg = (await getMovieNowPlaying()).map(
-    (movie: any) => movie.poster_path
+export default async function useGetMovieImgAndId() {
+  const getMovieNowPlayingImgAndId = (await getMovieNowPlaying()).map(
+    (movie: any) => ({ posterPath: movie.poster_path, movieId: movie.id })
   );
-  const getMoviePopularImg = (await getMoviePopular()).map(
-    (movie: any) => movie.poster_path
+  const getMoviePopularImgAndId = (await getMoviePopular()).map(
+    (movie: any) => ({
+      posterPath: movie.poster_path,
+      movieId: movie.id,
+    })
   );
-  const getMovieTopRatedImg = (await getMovieTopRated()).map(
-    (movie: any) => movie.poster_path
+  const getMovieTopRatedImgAndId = (await getMovieTopRated()).map(
+    (movie: any) => ({
+      posterPath: movie.poster_path,
+      movieId: movie.id,
+    })
   );
-  const getMovieUpComingImg = (await getMovieUpComing()).map(
-    (movie: any) => movie.poster_path
+  const getMovieUpComingImgAndId = (await getMovieUpComing()).map(
+    (movie: any) => ({
+      posterPath: movie.poster_path,
+      movieId: movie.id,
+    })
   );
   return {
-    getMovieNowPlayingImg,
-    getMoviePopularImg,
-    getMovieTopRatedImg,
-    getMovieUpComingImg,
+    getMovieNowPlayingImgAndId,
+    getMoviePopularImgAndId,
+    getMovieTopRatedImgAndId,
+    getMovieUpComingImgAndId,
   };
 }
