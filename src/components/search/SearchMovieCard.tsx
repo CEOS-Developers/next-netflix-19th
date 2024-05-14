@@ -22,7 +22,7 @@ export default function SearchMovieCard({
       </div>
       <div className="flex p-3 justify-between items-center w-full">
         <span className="text-[14px] leading-[30px]">{title}</span>
-        <PlayCircle />
+        <PlayCircle className="shrink-0" />
       </div>
     </article>
   );

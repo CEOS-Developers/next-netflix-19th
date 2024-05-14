@@ -7,7 +7,7 @@ export default async function SearchPage() {
   return (
     <section className="w-full h-full flex flex-col gap-5">
       <SearchInput />
-      <h1 className="text-[26px] leading-[20px] tracking-[-0.07px] p-[10px]">
+      <h1 className="text-[26px] leading-[20px] tracking-[-0.07px] p-[10px] font-bold">
         Top Searches
       </h1>
       <div className="flex flex-col w-full overflow-scroll gap-1 mb-[86px]">
