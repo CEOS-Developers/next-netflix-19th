@@ -9,7 +9,7 @@ export default function MovieBar() {
         <Plus className="hover:cursor-pointer" />
         <p className="text-[14px] leading-[20px]">My List</p>
       </div>
-      <div className="w-[110px] h-[45px] flex gap-4 items-center justify-center bg-[#C4C4C4] rounded-md hover:cursor-pointer">
+      <div className="w-[110px] h-[45px] flex gap-4 items-center justify-center bg-buttonGray rounded-md hover:cursor-pointer hover:bg-buttonHover">
         <RightGo />
         <p className="text-[20px] font-[600] text-black">Play</p>
       </div>

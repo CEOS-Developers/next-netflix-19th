@@ -6,13 +6,14 @@ import PreviewSection from '@components/movie-detail/PreviewSection';
 export default async function MovieDetailPage({ params }: any) {
   const { movieId } = params;
   const movieInfo = await getMovieInfoByMovieId(movieId);
-  // console.log(movieInfo);
 
   return (
     <>
-      <ThumbNailImage />
+      <ThumbNailImage
+        imageUrl={`https://image.tmdb.org/t/p/w1280${movieInfo['poster_path']}`}
+      />
       <PlayButton />
-      <PreviewSection />
+      <PreviewSection previewContent={movieInfo.overview} />
     </>
   );
 }

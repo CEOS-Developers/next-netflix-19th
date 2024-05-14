@@ -10,6 +10,7 @@ export default async function HomePage() {
     getMovieTopRatedImgAndId,
     getMovieUpComingImgAndId,
   } = await useGetMovieImg();
+
   const MoviesList = [
     { title: 'Previews', movieList: getMovieNowPlayingImgAndId },
     { title: 'Popular on NetFlix', movieList: getMoviePopularImgAndId },
