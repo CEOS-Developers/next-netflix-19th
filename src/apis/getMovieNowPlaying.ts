@@ -60,9 +60,9 @@ export async function getMovieUpComing() {
 // 영화의 id를 이용해 해당 영화의 정보를 가져올 수 있는 함수
 // 특정 영화 아이콘을 눌렀을 때 상세 정보 탭으로 이동하는 경우 이걸 사용해서 상세 페이지를 보여주면 될듯
 export async function getMovieInfoByMovieId(movieId: number) {
-  const testMovieResponse = await fetch(
+  const movieInfoResponse = await fetch(
     `https://api.themoviedb.org/3/movie/${movieId}?language=en-US&api_key=${process.env.THEMOVIE_API_KEY}`
   );
 
-  return testMovieResponse.json();
+  return movieInfoResponse.json();
 }
