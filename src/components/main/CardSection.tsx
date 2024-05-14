@@ -1,8 +1,9 @@
 import PreviewImage from './PreviewImage';
+import { movieInfo } from 'types/movie';
 
 interface CardSectionProps {
   title: string;
-  movieList: string[];
+  movieList: movieInfo[];
 }
 
 export default function CardSection({ title, movieList }: CardSectionProps) {
@@ -21,9 +22,10 @@ export default function CardSection({ title, movieList }: CardSectionProps) {
         {movieList.map((movie: any) => {
           return (
             <PreviewImage
-              imageUrl={`https://image.tmdb.org/t/p/w1280${movie}`}
+              imageUrl={`https://image.tmdb.org/t/p/w1280${movie['posterPath']}`}
               square={title === 'Previews' ? false : true}
               key={movie}
+              movieId={movie['movieId']}
             />
           );
         })}
