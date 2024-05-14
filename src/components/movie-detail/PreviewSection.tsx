@@ -10,7 +10,9 @@ export default function PreviewSection({ previewContent }: previewSectionProp) {
       </div>
 
       <div className="mt-6 px-8 h-fit leading-[14.17px] text-[11.14px] tracking-[-0.03px] font-normal">
-        {previewContent}
+        {previewContent === ''
+          ? 'There is no preview information!'
+          : previewContent}
       </div>
     </>
   );
