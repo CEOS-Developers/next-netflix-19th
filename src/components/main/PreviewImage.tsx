@@ -13,14 +13,14 @@ export default function PreviewImage({
   movieId,
 }: PreviewImageProps) {
   return (
-    <article
-      className={
-        square
-          ? 'w-[103px] h-[161px] overflow-hidden relative shrink-0'
-          : 'w-[100px] h-[100px] rounded-full overflow-hidden relative shrink-0'
-      }
-    >
-      <Link href={`/movie-detail/${movieId}`}>
+    <Link href={`/movie-detail/${movieId}`}>
+      <article
+        className={
+          square
+            ? 'w-[103px] h-[161px] overflow-hidden relative shrink-0'
+            : 'w-[100px] h-[100px] rounded-full overflow-hidden relative shrink-0'
+        }
+      >
         <Image
           alt="preview_image"
           src={imageUrl}
@@ -28,7 +28,7 @@ export default function PreviewImage({
           className="object-cover"
           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
         />
-      </Link>
-    </article>
+      </article>
+    </Link>
   );
 }
