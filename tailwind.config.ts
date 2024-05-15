@@ -13,6 +13,8 @@ const config: Config = {
       },
       colors: {
         tabBarGray: '#8C8787',
+        buttonGray: '#C4C4C4',
+        buttonHover: 'rgb(163, 163, 163)',
       },
     },
   },
