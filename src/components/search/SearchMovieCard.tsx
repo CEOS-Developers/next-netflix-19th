@@ -24,6 +24,7 @@ export default function SearchMovieCard({
           alt={title}
           fill
           className="object-cover"
+          sizes="(max-width: 640px) 100vw, (max-width: 768px) 100vw, (max-width: 1024px) 100vw, 146px"
         />
       </div>
       <div className="flex p-3 justify-between items-center w-full">

@@ -12,4 +12,5 @@ export default async function useGetMovieImgAndTitleAndId() {
   return {
     getMovieTopRatedImgAndTitle,
   };
+  
 }

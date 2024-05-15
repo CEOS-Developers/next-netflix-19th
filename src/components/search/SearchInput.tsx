@@ -7,14 +7,12 @@ import { useEffect, useState } from 'react';
 
 export default function SearchInput() {
   const [showingMovies, setShowingMovies] = useRecoilState(showingMovie);
-  console.log('showingMovies', showingMovies);
   const [allMovies, setAllMovies] = useState(showingMovies);
   useEffect(() => {
     if (showingMovies.length > 0 && allMovies.length === 0) {
       setAllMovies(showingMovies);
     }
   }, [showingMovies]);
-  console.log('allMovies', allMovies);
   const HandleInput = () => {
     const searchInput = document.querySelector<HTMLInputElement>('#input');
     if (searchInput) {
