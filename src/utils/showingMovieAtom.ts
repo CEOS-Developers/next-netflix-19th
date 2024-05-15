@@ -5,3 +5,8 @@ export const showingMovie = atom<movieInfowithTitle[]>({
   key: 'showingMovie',
   default: [],
 });
+
+export const showingMovieCopy = atom<movieInfowithTitle[]>({
+  key: 'showingMovieCopy',
+  default: [],
+});
