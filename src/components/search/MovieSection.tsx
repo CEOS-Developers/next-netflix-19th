@@ -1,5 +1,4 @@
 'use client';
-import useGetMovieImgAndId from '@hooks/useGetMovieImg';
 import useGetMovieImgAndTitleAndId from '@hooks/useGetMovieImgAndTitle';
 import { showingMovie } from '@utils/showingMovieAtom';
 import { useEffect, useRef, useState, useCallback } from 'react';
