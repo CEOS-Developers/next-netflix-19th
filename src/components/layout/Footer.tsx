@@ -1,23 +1,32 @@
 'use client';
 import Image from 'next/image';
 import { useState, useEffect } from 'react';
-import { useRouter } from 'next/navigation';
+import { useRouter, usePathname } from 'next/navigation';
 
-export default function Footer(): JSX.Element {
+export default function Footer() {
   const router = useRouter();
+  const pathname = usePathname();
   const [activeImage, setActiveImage] = useState('');
 
   useEffect(() => {
-    if (activeImage) {
+    const currentPath = pathname.split('/').pop();
+    if (currentPath) {
+      setActiveImage(currentPath);
+    }
+  }, [pathname]);
+
+  useEffect(() => {
+    if (activeImage && !pathname.endsWith(`/${activeImage}`)) {
       router.push(`/${activeImage}`);
     }
   }, [activeImage]);
 
   const handleImageClick = (image: string) => {
-    if (activeImage === image) return;
-    const newActiveImage = activeImage === image ? '' : image;
-    setActiveImage(newActiveImage);
+    if (activeImage !== image) {
+      setActiveImage(image);
+    }
   };
+
   const getImageSrc = (image: string) => {
     return activeImage === image ? `/${image}-active.svg` : `/${image}.svg`;
   };
@@ -28,11 +37,11 @@ export default function Footer(): JSX.Element {
         <div className="flex items-center justify-between h-[48px] w-full bg-[#121212] px-[26px] ">
           <div className="flex flex-col items-center justify-between h-[35px]">
             <Image
-              src={getImageSrc('home')}
+              src={getImageSrc('main')}
               alt="Home"
               width={24}
               height={24}
-              onClick={() => handleImageClick('home')}
+              onClick={() => handleImageClick('main')}
             />
             <span className="text-white" style={{ fontSize: '8.2px' }}>
               Home
@@ -54,11 +63,10 @@ export default function Footer(): JSX.Element {
 
           <div className="flex flex-col items-center justify-between h-[35px]">
             <Image
-              src="/comingsoon.svg"
+              src={getImageSrc('comingsoon')}
               alt="Coming Soon"
               width={20}
               height={20}
-              onClick={() => handleImageClick('comingsoon')}
             />
             <span className="text-white" style={{ fontSize: '8.2px' }}>
               Coming Soon
@@ -67,11 +75,10 @@ export default function Footer(): JSX.Element {
 
           <div className="flex flex-col items-center justify-between h-[35px]">
             <Image
-              src="/download.svg"
+              src={getImageSrc('download')}
               alt="Download"
               width={16}
               height={19}
-              onClick={() => handleImageClick('download')}
             />
             <span className="text-white" style={{ fontSize: '8.2px' }}>
               Download
@@ -79,7 +86,12 @@ export default function Footer(): JSX.Element {
           </div>
 
           <div className="flex flex-col items-center justify-between h-[35px]">
-            <Image src="/more.svg" alt="More" width={21} height={17} onClick={() => handleImageClick('more')} />
+            <Image
+              src={getImageSrc('more')}
+              alt="More"
+              width={21}
+              height={17}
+            />
             <span className="text-white" style={{ fontSize: '8.2px' }}>
               More
             </span>
