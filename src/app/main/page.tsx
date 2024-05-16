@@ -13,7 +13,7 @@ const apiEndpoints = {
   ontheairmovies: '/tv/on_the_air',
   nowplayingmovies: '/movie/now_playing',
   upcomingmovies: '/movie/upcoming',
-  topRatedMovies: '/movie/top_rated',
+  topRatedMovies: '/movie/popular',
 };
 
 export default async function Home() {
