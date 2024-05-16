@@ -1,8 +1,12 @@
+const domainName = process.env.NEXT_PUBLIC_DOMAIN_NAME;
+
 // 현재 상영 중인 영화 데이터를 반환하는 함수.
 export async function getMovieNowPlaying() {
   const previewMovieResponse = await fetch(
-    `https://api.themoviedb.org/3/movie/now_playing?api_key=${process.env.NEXT_PUBLIC_THEMOVIE_API_KEY}`,
-    { cache: 'no-store' }
+    `${domainName}/api/nowPlayingmovies`,
+    {
+      cache: 'no-store',
+    }
   );
 
   const previewMovieData = await previewMovieResponse.json();
@@ -12,10 +16,9 @@ export async function getMovieNowPlaying() {
 
 // 인기 있는 영화 데이터를 반환하는 함수
 export async function getMoviePopular() {
-  const popularMovieResponse = await fetch(
-    `https://api.themoviedb.org/3/movie/popular?api_key=${process.env.NEXT_PUBLIC_THEMOVIE_API_KEY}`,
-    { cache: 'no-store' }
-  );
+  const popularMovieResponse = await fetch(`${domainName}/api/popularMovies`, {
+    cache: 'no-store',
+  });
 
   const popularMovieData = await popularMovieResponse.json();
 
@@ -25,7 +28,7 @@ export async function getMoviePopular() {
 // top-rated 된 영화 데이터를 반환하는 함수 : 기본적으로 page 1에 해당하는 데이터 20개를 보여줌
 export async function getMovieTopRated() {
   const topRatedMovieResponse = await fetch(
-    `https://api.themoviedb.org/3/movie/top_rated?api_key=${process.env.NEXT_PUBLIC_THEMOVIE_API_KEY}`,
+    `${domainName}/api/topRatedMovies`,
     { cache: 'no-store' }
   );
 
@@ -37,7 +40,7 @@ export async function getMovieTopRated() {
 // search page에서 스크롤을 내리면 계속 그 다음으로 유명한 영화 목록들을 끌어올 때 사용하는 함수
 export async function getMovieTopRatedByPageNumber(pageNumber: number) {
   const topRatedMovieResponse = await fetch(
-    `https://api.themoviedb.org/3/movie/top_rated?api_key=${process.env.NEXT_PUBLIC_THEMOVIE_API_KEY}&page=${pageNumber}`,
+    `${domainName}/api/topRatedMoviesByPage?pageNumber=${pageNumber}`,
     { cache: 'no-store' }
   );
 
@@ -48,7 +51,7 @@ export async function getMovieTopRatedByPageNumber(pageNumber: number) {
 
 export async function getMovieUpComing() {
   const upComingMovieResponse = await fetch(
-    `https://api.themoviedb.org/3/movie/upcoming?api_key=${process.env.NEXT_PUBLIC_THEMOVIE_API_KEY}`,
+    `${domainName}/api/upComingMovies`,
     { cache: 'no-store' }
   );
 
@@ -61,7 +64,7 @@ export async function getMovieUpComing() {
 // 특정 영화 아이콘을 눌렀을 때 상세 정보 탭으로 이동하는 경우 이걸 사용해서 상세 페이지를 보여주면 될듯
 export async function getMovieInfoByMovieId(movieId: number) {
   const movieInfoResponse = await fetch(
-    `https://api.themoviedb.org/3/movie/${movieId}?language=en-US&api_key=${process.env.NEXT_PUBLIC_THEMOVIE_API_KEY}`
+    `${domainName}/api/movieInfo/${movieId}`
   );
 
   return movieInfoResponse.json();
