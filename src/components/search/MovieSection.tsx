@@ -1,5 +1,4 @@
 'use client';
-import useGetMovieImgAndTitleAndId from '@hooks/useGetMovieImgAndTitle';
 import { showingMovie } from '@utils/showingMovieAtom';
 import { useEffect, useRef, useState, useCallback } from 'react';
 import { useRecoilState } from 'recoil';
@@ -7,21 +6,44 @@ import SearchMovieCard from './SearchMovieCard';
 import { getMovieTopRatedByPageNumber } from '@apis/getMovieNowPlaying';
 
 export async function generateStaticParams() {
-  return [{ number: '2' }, { number: '3' }, { number: '4' },{number: '5'},{number: '6'},{number: '7'},{number: '8'},{number: '9'},{number: '10'},{number: '11'},{number: '12'},{number: '13'},{number: '15'},{number: '16'},{number: '17'},{number: '18'},{number: '19'},{number: '20'}]
+  return [
+    { number: '1' },
+    { number: '2' },
+    { number: '3' },
+    { number: '4' },
+    { number: '5' },
+    { number: '6' },
+    { number: '7' },
+    { number: '8' },
+    { number: '9' },
+    { number: '10' },
+    { number: '11' },
+    { number: '12' },
+    { number: '13' },
+    { number: '15' },
+    { number: '16' },
+    { number: '17' },
+    { number: '18' },
+    { number: '19' },
+    { number: '20' },
+  ];
 }
 
 export default function MovieSection() {
   const loaderRef = useRef<HTMLDivElement>(null);
+  const searchInputRef = useRef<HTMLInputElement | null>(null);
   const [isLoading, setIsLoading] = useState(false);
   const [number, setNumber] = useState(2);
+  useEffect(() => {
+    searchInputRef.current = document.querySelector<HTMLInputElement>('#input');
+  }, []);
 
   const [showingMovies, setShowingMovies] = useRecoilState(showingMovie);
 
   useEffect(() => {
     async function fetchMovieData() {
-      const { getMovieTopRatedImgAndTitle } =
-        await useGetMovieImgAndTitleAndId();
-      setShowingMovies(getMovieTopRatedImgAndTitle);
+      const res = await getMovieTopRatedByPageNumber(1);
+      setShowingMovies(res);
     }
     fetchMovieData();
   }, [setShowingMovies]);
@@ -40,7 +62,7 @@ export default function MovieSection() {
     } catch (error) {
       console.error('Failed to load more movies', error);
     } finally {
-      setIsLoading(false); // Reset loading state
+      setIsLoading(false);
     }
   }, [number, setShowingMovies]);
 
@@ -49,7 +71,10 @@ export default function MovieSection() {
       (entries: IntersectionObserverEntry[]) => {
         const firstEntry = entries[0];
         if (firstEntry.isIntersecting && !isLoading) {
-          loadMore();
+          if (searchInputRef.current && searchInputRef.current.value !== '') {
+          } else {
+            loadMore();
+          }
         }
       }
     );
