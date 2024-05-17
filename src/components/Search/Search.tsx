@@ -4,6 +4,7 @@ import Image from 'next/image';
 import { PosterProps } from '@/lib/types';
 import { fetchDiscoverMovie } from '@/lib/actions';
 import { motion } from 'framer-motion';
+import Link from 'next/link';
 
 export default function SearchBar({ fetchData, title }: PosterProps) {
   const [inputValue, setInputValue] = useState('');
@@ -90,6 +91,7 @@ export default function SearchBar({ fetchData, title }: PosterProps) {
         <h1 className="text-white font-bold text-[26.75px] pl-3">{title}</h1>
 
         {filteredData.map((movie, index) => (
+       <Link href={`/detail/${movie.id}`}>
           <div
             className="w-full flex pt-1 cursor-pointer"
             key={movie.id}
@@ -110,6 +112,7 @@ export default function SearchBar({ fetchData, title }: PosterProps) {
               <Image src={'/icons/play.svg'} width={28} height={28} alt="clear_icon" />
             </div>
           </div>
+          </Link>
         ))}
         {isLoading && (
           <motion.div
