@@ -19,7 +19,7 @@ export default function Footer() {
     if (activeImage && !pathname.endsWith(`/${activeImage}`)) {
       router.push(`/${activeImage}`);
     }
-  }, [activeImage]);
+  }, [activeImage, pathname, router]);
 
   const handleImageClick = (image: string) => {
     if (activeImage !== image) {

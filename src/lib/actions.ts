@@ -17,3 +17,4 @@ export const fetchDiscoverMovie = async (endpoint: string) => {
 
   return await res.json();
 };
+
