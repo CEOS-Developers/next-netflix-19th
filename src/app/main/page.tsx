@@ -17,13 +17,25 @@ const apiEndpoints = {
 };
 
 export default async function Home() {
-  const fetchPopular = await fetchDiscoverMovie(apiEndpoints.popularmovies);
-  const fetchTrend = await fetchDiscoverMovie(apiEndpoints.trendingmovies);
-  const fetchTopRated = await fetchDiscoverMovie(apiEndpoints.topratedmovies);
-  const fetchOnAir = await fetchDiscoverMovie(apiEndpoints.ontheairmovies);
-  const fetchNowPlaying = await fetchDiscoverMovie(apiEndpoints.nowplayingmovies);
-  const fetchUpComing = await fetchDiscoverMovie(apiEndpoints.upcomingmovies);
-  const fetchTopRated1 = await fetchDiscoverMovie(apiEndpoints.topRatedMovies)
+  
+  const [
+    fetchPopular,
+    fetchTrend,
+    fetchTopRated,
+    fetchOnAir,
+    fetchNowPlaying,
+    fetchUpComing,
+    fetchTopRated1
+  ] = await Promise.all([
+    fetchDiscoverMovie(apiEndpoints.popularmovies),
+    fetchDiscoverMovie(apiEndpoints.trendingmovies),
+    fetchDiscoverMovie(apiEndpoints.topratedmovies),
+    fetchDiscoverMovie(apiEndpoints.ontheairmovies),
+    fetchDiscoverMovie(apiEndpoints.nowplayingmovies),
+    fetchDiscoverMovie(apiEndpoints.upcomingmovies),
+    fetchDiscoverMovie(apiEndpoints.topRatedMovies)
+  ]);
+  
   return (
     <div className="flex flex-col h-screen" >
       <Header />

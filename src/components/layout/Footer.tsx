@@ -43,7 +43,7 @@ export default function Footer() {
       <div className="flex flex-col fix bottom-0">
         <div className="flex items-center justify-between h-[48px] w-full bg-[#121212] px-[26px]">
           {menuItems.map((item) => (
-            <div key={item.name} className="flex flex-col items-center justify-between h-[35px]">
+            <div key={item.name} className="flex flex-col items-center justify-between h-[35px] cursor-pointer">
               <Image
                 src={getImageSrc(item.name)}
                 alt={item.label}
