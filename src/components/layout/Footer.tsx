@@ -1,6 +1,6 @@
 'use client';
 import Image from 'next/image';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import { useRouter, usePathname } from 'next/navigation';
 
 export default function Footer() {
@@ -10,94 +10,55 @@ export default function Footer() {
 
   useEffect(() => {
     const currentPath = pathname.split('/').pop();
-    if (currentPath) {
+    if (currentPath && currentPath !== activeImage) {
       setActiveImage(currentPath);
     }
-  }, [pathname]);
+  }, [pathname, activeImage]);
 
-  useEffect(() => {
-    if (activeImage && !pathname.endsWith(`/${activeImage}`)) {
-      router.push(`/${activeImage}`);
-    }
-  }, [activeImage, pathname, router]);
+  const handleImageClick = useCallback(
+    (image: string) => {
+      if (activeImage !== image) {
+        setActiveImage(image);
+        router.push(`/${image}`);
+      }
+    },
+    [activeImage, router]
+  );
 
-  const handleImageClick = (image: string) => {
-    if (activeImage !== image) {
-      setActiveImage(image);
-    }
-  };
+  const getImageSrc = useCallback(
+    (image: string) => (activeImage === image ? `/${image}-active.svg` : `/${image}.svg`),
+    [activeImage]
+  );
 
-  const getImageSrc = (image: string) => {
-    return activeImage === image ? `/${image}-active.svg` : `/${image}.svg`;
-  };
+  const menuItems = [
+    { name: 'main', label: 'Home', width: 24, height: 24 },
+    { name: 'search', label: 'Search', width: 24, height: 24 },
+    { name: 'comingsoon', label: 'Coming Soon', width: 20, height: 20 },
+    { name: 'download', label: 'Download', width: 16, height: 19 },
+    { name: 'more', label: 'More', width: 21, height: 17 },
+  ];
 
   return (
     <>
       <div className="flex flex-col fix bottom-0">
-        <div className="flex items-center justify-between h-[48px] w-full bg-[#121212] px-[26px] ">
-          <div className="flex flex-col items-center justify-between h-[35px]">
-            <Image
-              src={getImageSrc('main')}
-              alt="Home"
-              width={24}
-              height={24}
-              onClick={() => handleImageClick('main')}
-            />
-            <span className="text-white" style={{ fontSize: '8.2px' }}>
-              Home
-            </span>
-          </div>
-
-          <div className="flex flex-col items-center justify-between h-[35px]">
-            <Image
-              src={getImageSrc('search')}
-              alt="Search"
-              width={24}
-              height={24}
-              onClick={() => handleImageClick('search')}
-            />
-            <span className="text-white" style={{ fontSize: '8.2px' }}>
-              Search
-            </span>
-          </div>
-
-          <div className="flex flex-col items-center justify-between h-[35px]">
-            <Image
-              src={getImageSrc('comingsoon')}
-              alt="Coming Soon"
-              width={20}
-              height={20}
-            />
-            <span className="text-white" style={{ fontSize: '8.2px' }}>
-              Coming Soon
-            </span>
-          </div>
-
-          <div className="flex flex-col items-center justify-between h-[35px]">
-            <Image
-              src={getImageSrc('download')}
-              alt="Download"
-              width={16}
-              height={19}
-            />
-            <span className="text-white" style={{ fontSize: '8.2px' }}>
-              Download
-            </span>
-          </div>
-
-          <div className="flex flex-col items-center justify-between h-[35px]">
-            <Image
-              src={getImageSrc('more')}
-              alt="More"
-              width={21}
-              height={17}
-            />
-            <span className="text-white" style={{ fontSize: '8.2px' }}>
-              More
-            </span>
-          </div>
+        <div className="flex items-center justify-between h-[48px] w-full bg-[#121212] px-[26px]">
+          {menuItems.map((item) => (
+            <div key={item.name} className="flex flex-col items-center justify-between h-[35px]">
+              <Image
+                src={getImageSrc(item.name)}
+                alt={item.label}
+                width={item.width}
+                height={item.height}
+                onClick={() => handleImageClick(item.name)}
+              />
+              <span className="text-white" style={{ fontSize: '8.2px' }}>
+                {item.label}
+              </span>
+            </div>
+          ))}
         </div>
-        <div className="hidden md:flex items-center justify-center h-[31.7px] w-full bg-[#000000]"> {/*모바일에서는숨기기*/}
+        <div className="hidden md:flex items-center justify-center h-[31.7px] w-full bg-[#000000]">
+          {/*모바일에서는숨기기*/}
           <div className="w-[121px] h-[4.5px] bg-white mt-[13.12px]"></div>
         </div>
       </div>
