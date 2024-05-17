@@ -67,7 +67,7 @@ export default function SearchBar({ fetchData, title }: PosterProps) {
       );
       if (node) observer.current.observe(node);
     },
-    [page, isLoading, hasMore],
+    [page, isLoading, hasMore, loadMore],
   );
 
   return (
@@ -91,7 +91,7 @@ export default function SearchBar({ fetchData, title }: PosterProps) {
         <h1 className="text-white font-bold text-[26.75px] pl-3">{title}</h1>
 
         {filteredData.map((movie, index) => (
-       <Link href={`/detail/${movie.id}`}>
+       <Link href={`/detail/${movie.id}`} key={movie.id}>
           <div
             className="w-full flex pt-1 cursor-pointer"
             key={movie.id}
