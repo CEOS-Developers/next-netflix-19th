@@ -17,7 +17,6 @@ export default function SearchInput() {
     const searchInput = document.querySelector<HTMLInputElement>('#input');
     if (searchInput) {
       const searchValue = searchInput.value;
-      console.log('searchValue', searchValue);
       const searchResult = showingMovies.filter((movie) => {
         return movie.title.includes(searchValue);
       });
