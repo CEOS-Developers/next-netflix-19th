@@ -1,5 +1,6 @@
 import { SmallSearchIcon, SmallXIcon } from '@/public/icon';
 import { useState } from 'react';
+
 interface SearchBarProps {
   onSearch: (query: string) => void;
 }
@@ -16,6 +17,11 @@ export default function SearchBar({ onSearch }: SearchBarProps) {
     onSearch(e.target.value);
   }
 
+  function handleClearInput() {
+    setSearchQuery('');
+    onSearch('');
+  }
+
   return (
     <form
       className="flex justify-between items-center w-full h-[52px] py-4 px-5 bg-search-gray"
@@ -28,7 +34,7 @@ export default function SearchBar({ onSearch }: SearchBarProps) {
         value={searchQuery}
         onChange={handleInputChange}
       />
-      <SmallXIcon className="items-center" />
+      <SmallXIcon className="items-center cursor-pointer" onClick={handleClearInput} />
     </form>
   );
 }
