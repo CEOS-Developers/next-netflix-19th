@@ -1,0 +1,15 @@
+export { default as ComingsoonIcon } from './comingsoon.svg';
+export { default as DownloadIcon } from './download.svg';
+export { default as HomeActiveIcon } from './homeActive.svg';
+export { default as HomeInactiveIcon } from './homeInactive.svg';
+export { default as SearchActiveIcon } from './searchActive.svg';
+export { default as SearchInactiveIcon } from './searchInactive.svg';
+export { default as InfoIcon } from './info.svg';
+export { default as NetflixIcon } from './netflix.svg';
+export { default as PlayIcon } from './play.svg';
+export { default as PlusIcon } from './plus.svg';
+export { default as MoreIcon } from './more.svg';
+export { default as LogoIcon } from './logo.svg';
+export { default as SmallSearchIcon } from './smallSearch.svg';
+export { default as SmallXIcon } from './smallX.svg';
+export { default as PlayCircleIcon } from './playCircle.svg';

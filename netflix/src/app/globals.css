@@ -1,0 +1,140 @@
+@import url('https://fonts.cdnfonts.com/css/sf-pro-display');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+  padding: 0;
+
+  background-color: black;
+  font-family: 'SF Pro Display', sans-serif;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+/* body {
+  font-size: 62.5%;
+  width: 100%;
+  height: 100%;
+
+  background-color: black;
+} */
+
+.children-container {
+  height: calc(100% - 79.7px);
+  overflow: scroll;
+}
+
+/* fonts는 className에 추가해서 사용하면 돼 ! */
+/* fonts */
+.fonts-bigtitle {
+  color: #fff;
+
+  font-size: 26.748px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 20px;
+}
+
+.fonts-smalltitle {
+  color: #fff;
+
+  font-size: 20.921px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 15.643px;
+}
+
+.fonts-headline {
+  color: #fff;
+  text-align: center;
+
+  font-size: 17.197px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 30.45px;
+  letter-spacing: 0.025em;
+}
+
+.fonts-today {
+  color: #fff;
+
+  text-align: center;
+
+  font-size: 13.723px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 1.25;
+}
+
+.fonts-btn {
+  color: #000;
+
+  text-align: center;
+  font-size: 20.462px;
+  font-style: normal;
+  font-weight: 600;
+}
+
+.fonts-mainicon {
+  color: #fff;
+
+  text-align: center;
+  font-size: 13.642px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.25;
+}
+
+.fonts-footer-activeicon {
+  color: #fff;
+
+  text-align: center;
+  font-size: 0.5125rem;
+  font-style: normal;
+  font-weight: 500;
+}
+
+.fonts-footer-inactiveicon {
+  color: #8c8787;
+
+  text-align: center;
+  font-size: 8.2px;
+  font-style: normal;
+  font-weight: 500;
+}
+
+.fonts-input {
+  color: #c4c4c4;
+
+  font-size: 15.213px;
+  font-style: normal;
+  font-weight: 400;
+}
+
+.fonts-searched {
+  color: #fff;
+
+  font-size: 14.722px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 30px; /* 203.774% */
+  letter-spacing: 0.751px;
+}
+
+.fonts-details {
+  color: rgba(255, 255, 255, 0.83);
+
+  font-size: 0.69631rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 14.17px; /* 127.193% */
+  letter-spacing: -0.031px;
+}
