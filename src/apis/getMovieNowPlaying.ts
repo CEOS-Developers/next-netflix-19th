@@ -41,7 +41,7 @@ export async function getMovieTopRated() {
 export async function getMovieTopRatedByPageNumber(pageNumber: number) {
   const topRatedMovieResponse = await fetch(
     `${domainName}/api/topRatedMoviesByPage?pageNumber=${pageNumber}`,
-    { cache: 'force-cache' }
+    { cache: 'no-store' }
   );
 
   const topRatedMovieData = await topRatedMovieResponse.json();
