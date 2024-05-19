@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useRouter } from 'next/navigation';
 import Lottie from 'react-lottie-player';
@@ -8,41 +8,34 @@ import netflixLanding from './netflixLanding.json';
 
 const NetflixButton = () => {
   const [play, setPlay] = useState<boolean>(false);
-  const [audio, setAudio] = useState<HTMLAudioElement | null>(null);
-  const [audioAndAnimationFinished, setAudioAndAnimationFinished] = useState<boolean>(false);
   const [isVisible, setIsVisible] = useState<boolean>(true);
+  const audioRef = useRef<HTMLAudioElement | null>(null);
 
   const router = useRouter();
 
   useEffect(() => {
-    if (typeof window !== 'undefined' && !audio) {
-      setAudio(new Audio('/NetflixIntroSound.mp3'));
+    if (typeof window !== 'undefined') {
+      audioRef.current = new Audio('/NetflixIntroSound.mp3');
     }
-  }, [audio]);
+  }, []);
+
 
   useEffect(() => {
-    if (play && audio) {
-      audio
-        .play()
-        .then(() => {
-          setAudioAndAnimationFinished(true);
-        })
-        .catch((error: Error) => console.error('Playback failed:', error));
+    if (play && audioRef.current) {
+      audioRef.current.play().catch((error: Error) => {
+        console.error('Playback failed:', error);
+      });
     }
-  }, [play, audio]);
+  }, [play]);
 
   const handleClick = () => {
     setIsVisible(false);
     setPlay(true);
   };
 
-  useEffect(() => {
-    if (audioAndAnimationFinished) {
-      setTimeout(() => {
-        router.push('/main');
-      }, 4000);
-    }
-  }, [audioAndAnimationFinished, router]);
+  const handleAnimationComplete = () => {
+      router.push('/main');
+  };
 
   return (
     <div className="relative flex justify-center items-center h-screen">
@@ -79,7 +72,7 @@ const NetflixButton = () => {
           }}
           play
           speed={1.25}
-          onComplete={() => router.push('/main')}
+          onComplete={handleAnimationComplete}
         />
       )}
     </div>
